@@ -43,7 +43,6 @@ const DesktopSideBar = ({ options }) => {
   };
 
   const handleApply = () => {
-    console.log(selectedItems);
     setSearchQuery(searchData)
     setSelectedFilters(selectedItems); // Update global state with selected items
     setSelectedItems([]);
@@ -140,7 +139,6 @@ const MobileSideBar = ({ options }) => {
   };
 
   const handleApply = () => {
-    console.log(selectedItems);
     setSearchQuery(searchData);
     setSelectedFilters(selectedItems); // Update global state with selected items
     setSelectedItems([]);

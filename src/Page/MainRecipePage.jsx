@@ -15,12 +15,6 @@ const MainRecipePage = () => {
   const { searchQuery, selectedFilters } = useContext(RecipeResultContext);
   const [error, setError] = useState(null);
 
-  // Verbose logging for filters
-  useEffect(() => {
-    console.log("🔍 MAIN PAGE FILTERS:");
-    console.log("Search Query:", searchQuery);
-    console.log("Selected Filters:", JSON.stringify(selectedFilters, null, 2));
-  }, [searchQuery, selectedFilters]);
 
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -33,20 +27,17 @@ const MainRecipePage = () => {
           ? `tags=${selectedFilters.map(encodeURIComponent).join(',')}`
           : '';
 
-        const baseURL = `https://api.spoonacular.com/recipes/complexSearch?query=${searchQuery||"chicken"}&apiKey=${apiKey}&number=10&addRecipeInformation=true&sort=random`;
+        const baseURL = `https://api.spoonacular.com/recipes/complexSearch?query=${searchQuery}&apiKey=${apiKey}&number=10&addRecipeInformation=true&sort=random`;
 
         const fullAPIPath = resultFilter
           ? `${baseURL}&${resultFilter}`
           : baseURL;
-
-        console.log("Full API Path:", fullAPIPath);
 
         const searchResponse = await axios.get(fullAPIPath);
         const searchdata = searchResponse.data;
         const data = searchdata.results || [];
 
         setRecipe(data);
-        console.log("Fetched Recipes:", data);
       } catch (error) {
         console.error("Fetch Error:", error);
         setError("Failed to fetch recipes. Please try again later.");
@@ -69,14 +60,11 @@ const MainRecipePage = () => {
     try {
       const baseURL = `https://api.spoonacular.com/recipes/complexSearch?query=${enteredResult}&apiKey=${apiKey}&number=10&addRecipeInformation=true&sort=random`;
 
-      console.log("On Search Result:", baseURL);
-
       const searchResponse = await axios.get(baseURL);
       const searchdata = searchResponse.data;
       const data = searchdata.results || [];
 
       setRecipe(data);
-      console.log("Fetched Recipes:", data);
     } catch (error) {
       console.error("Fetch Error:", error);
       setError("Failed to fetch recipes. Please try again later.");
