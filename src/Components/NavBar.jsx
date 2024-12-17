@@ -23,7 +23,7 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="navbar shadow-2xl px-7   ">
+            <div className="navbar shadow-md px-7   ">
                 <div className="navbar-start w-2/3 sm:w-1/2 ">
                     <img src="../favicon.svg" alt="logo" />
                     <div className="flex flex-col justify-center align-middle">
