@@ -33,7 +33,7 @@ const MainRecipePage = () => {
           ? `tags=${selectedFilters.map(encodeURIComponent).join(',')}`
           : '';
 
-        const baseURL = `https://api.spoonacular.com/recipes/complexSearch?query=${searchQuery}&apiKey=${apiKey}&number=10&addRecipeInformation=true&sort=random`;
+        const baseURL = `https://api.spoonacular.com/recipes/complexSearch?query=${searchQuery||"chicken"}&apiKey=${apiKey}&number=10&addRecipeInformation=true&sort=random`;
 
         const fullAPIPath = resultFilter
           ? `${baseURL}&${resultFilter}`
