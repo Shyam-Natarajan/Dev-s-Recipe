@@ -53,7 +53,7 @@ const DesktopSideBar = ({ options }) => {
   };
 
   return (
-    <div className="p-3 md:p-7 border-r min-h-screen w-52 md:w-64 lg:w-72 xl:w-80 2xl:w-96 hidden sm:block relative">
+    <div className="p-3 md:p-7 shadow-md min-h-screen w-52 md:w-64 lg:w-72 xl:w-80 2xl:w-96 hidden sm:block relative">
       <div className="flex flex-col gap-20 mb-10">
         <div className="w-full">
           <div className="flex">
