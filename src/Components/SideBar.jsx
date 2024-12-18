@@ -163,7 +163,7 @@ const MobileSideBar = ({ options }) => {
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-        <div className="menu bg-base-100 text-base-content min-h-full w-64 p-4 relative ">
+        <div className="menu bg-base-100 text-base-content min-h-full w-72 p-5 relative ">
           <div className="flex flex-col gap-20 sticky top-10 left-0 mb-20">
             <div className="w-10/12">
               <div className="flex">
